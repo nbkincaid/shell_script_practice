@@ -1,0 +1,14 @@
+file_info () {
+
+	# simple_file_info_function: function to display file information
+
+	if [[ -e $1 ]]; then
+		echo -e "\nFile Type:"
+		file $1
+		echo -e "\nFile Status:"
+		stat $1
+	else
+		echo "$FUNCNAME: usage: $FUNCNAME file" >&2
+		exit 1	
+	fi
+}
